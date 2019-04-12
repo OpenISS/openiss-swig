@@ -39,6 +39,25 @@ namespace openiss
 
         OIGestureData m_eGesture;
         std::vector<OIGestureData> m_eGestureData;
+        /* Provides Callback functionality. */
+        class FrameListener : public nite::HandTracker::NewFrameListener
+        {
+        public:
+            explicit FrameListener(OINiTEGestureTracker* p_OINiTEGestureTracker)
+            {
+                this->m_OINiTEGestureTracker = p_OINiTEGestureTracker;
+            }
+            ~FrameListener()
+            {
+                delete m_OINiTEGestureTracker;
+            }
+            GFrame m_GFrame;
+            void onNewFrame(nite::HandTracker &p_HandTracker) override;
+        private:
+            OINiTEGestureTracker* m_OINiTEGestureTracker;
+        };
+        /* --- */
+        FrameListener* m_listener;
     };
 }
 #endif //OINITEGESTURETRACKER_H_

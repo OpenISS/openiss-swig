@@ -2,7 +2,7 @@
 
 using namespace openiss;
 
-OIGestureData::OIGestureData() : m_iGestureState{OIGestureState::GESTURE_IS_ABSENT}, m_eGestureType{GESTURE_ALL} {}
+OIGestureData::OIGestureData() : m_eGestureType{GESTURE_ALL}, m_iGestureState{OIGestureState::GESTURE_IS_ABSENT} {}
 
 OIGestureData::~OIGestureData() = default;
 

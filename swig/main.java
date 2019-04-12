@@ -9,5 +9,9 @@ public class main
         OIGestureTracker tracker = new OINiTEGestureTracker();
         tracker.init();
         tracker.startGestureDetection();
+        while(true)
+        {
+        	tracker.getGestures();
+        }
    }
 }
