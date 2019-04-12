@@ -7,6 +7,7 @@
 
 #include <vector>
 #include "OIGFrame.hpp"
+#include "OIHand.hpp"
 
 namespace openiss
 {
@@ -23,6 +24,7 @@ namespace openiss
 // Start/Stop gesture detection and get a collection of gestures available.
         virtual int startGestureDetection() = 0;
         virtual int stopGestureDetection() = 0;
+        virtual std::vector<OIGestureData> getGestures() = 0;
     };
 }
 

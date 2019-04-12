@@ -4,7 +4,9 @@ project(oigesture VERSION 0.1.0)
 option(OIGESTURE_SWIG_JNI "Build a swig generated JNI library" OFF)
 
 add_library(oigesture
-        src/OINiTEGestureTracker.cpp)
+        src/OIHand.cpp
+        src/OINiTEGestureTracker.cpp
+        )
 
 target_include_directories(oigesture PUBLIC include)
 target_include_directories(oigesture PUBLIC $ENV{NITE2_INCLUDE})

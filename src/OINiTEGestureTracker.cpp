@@ -64,4 +64,10 @@ int OINiTEGestureTracker::stopGestureDetection()
     return 0;
 }
 
+//
+std::vector<OIGestureData> OINiTEGestureTracker::getGestures()
+{
+    return m_eGestureData;
+}
+
 // E.O.F

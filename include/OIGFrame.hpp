@@ -9,7 +9,8 @@
 #include <cstring>
 #include <stdint.h>
 
-namespace openiss {
+namespace openiss 
+{
 //
     struct GFrame
     {
@@ -21,6 +22,13 @@ namespace openiss {
         int m_width {0};
         const uint16_t* m_DepthData{nullptr};
     };
+
+    typedef struct Point3f
+    {
+        float x{0};
+        float y{0};
+        float z{0};
+    } Point3f;
 
     typedef struct
     {

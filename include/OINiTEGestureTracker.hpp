@@ -8,6 +8,7 @@
 #include <NiTE.h>
 #include <iostream>
 #include "OIGestureTracker.hpp"
+#include "OIHand.hpp"
 
 namespace openiss
 {
@@ -28,12 +29,16 @@ namespace openiss
 
         int stopGestureDetection() override;
 
+        std::vector<OIGestureData> getGestures() override;
     private:
         nite::Status m_eStatus;
         nite::HandTracker m_oHandTracker;
         nite::HandTrackerFrameRef m_oHandTrackerFrame;
         nite::Point3f m_GesturePosition;
         openni::VideoFrameRef m_DepthFrame;
+
+        OIGestureData m_eGesture;
+        std::vector<OIGestureData> m_eGestureData;
     };
 }
 #endif //OINITEGESTURETRACKER_H_
