@@ -14,8 +14,8 @@ target_include_directories(oigesture PUBLIC $ENV{OPENNI2_INCLUDE})
 
 message(">>>" $ENV{OPENNI2_REDIST})
 
-target_link_libraries(oigesture $ENV{OPENNI2_REDIST}/libOpenNI2.so)
-target_link_libraries(oigesture $ENV{NITE2_REDIST64}/libNiTE2.so)
+target_link_libraries(oigesture $ENV{OPENNI2_REDIST}/libOpenNI2.dylib)
+target_link_libraries(oigesture $ENV{NITE2_REDIST64}/libNiTE2.dylib)
 
 target_compile_options(oigesture PRIVATE -Wall -Wextra -pedantic -fPIC)
 

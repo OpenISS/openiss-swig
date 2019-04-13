@@ -23,8 +23,8 @@ swig_add_library(oigesture_
 target_include_directories(oigesture_ PRIVATE ${swig_inc_dirs})
 target_link_libraries(oigesture_ PRIVATE oigesture)
 
-target_link_libraries(oigesture_ PRIVATE $ENV{OPENNI2_REDIST}/libOpenNI2.so)
-target_link_libraries(oigesture_ PRIVATE $ENV{NITE2_REDIST64}/libNiTE2.so)
+target_link_libraries(oigesture_ PRIVATE $ENV{OPENNI2_REDIST}/libOpenNI2.dylib)
+target_link_libraries(oigesture_ PRIVATE $ENV{NITE2_REDIST64}/libNiTE2.dylib)
 
 add_jar(
     oigestureJNI
