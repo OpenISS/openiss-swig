@@ -5,13 +5,14 @@ public class main
 {
     public static void main(String argv[])
     {
-        System.loadLibrary("oigesture_");
+        System.loadLibrary("oigesture");
         OIGestureTracker tracker = new OINiTEGestureTracker();
         tracker.init();
         tracker.startGestureDetection();
         while(true)
         {
         	tracker.getGestures();
+            tracker.getHands();
         }
    }
 }

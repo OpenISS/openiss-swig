@@ -1,8 +1,8 @@
 %module oigesture
 
 %{
-#include "OIHand.hpp"	
+#include "OIStatus.hpp"	
 using namespace openiss;
 %}
 
-%include "OIHand.hpp"
+%include "OIStatus.hpp"

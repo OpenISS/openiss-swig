@@ -2,8 +2,8 @@
 %include "stdint.i"
 
 %{
-#include "OIGFrame.hpp"	
+#include "OIHandData.hpp"	
 using namespace openiss;
 %}
 
-%include "OIGFrame.hpp"
+%include "OIHandData.hpp"

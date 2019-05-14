@@ -1,4 +1,4 @@
-find_package(SWIG 3.0 REQUIRED)
+find_package(SWIG 4.0 REQUIRED)
 find_package(Java REQUIRED)
 find_package(JNI REQUIRED)
 include(UseJava)
@@ -10,14 +10,15 @@ SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE)
 SET(CMAKE_SHARED_LINKER_FLAGS "-fPIC")
 
 if(APPLE)
-    SET(CMAKE_INSTALL_RPATH "/$ORIGIN/./osx")
+    # SET(CMAKE_INSTALL_RPATH "/$ORIGIN/./osx")
+    SET(CMAKE_INSTALL_RPATH "../")
 endif(APPLE)
 
 list(APPEND swig_inc_dirs
         ${JNI_INCLUDE_DIRS}
         ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
-set_source_files_properties(oigesture.i
+set_source_files_properties(openiss.i
     PROPERTIES
         CPLUSPLUS ON
         INCLUDE_DIRECTORIES "${swig_inc_dirs}")
@@ -28,7 +29,7 @@ swig_add_library(oigesture
     TYPE SHARED
     LANGUAGE java
     OUTPUT_DIR ${CMAKE_BINARY_DIR}/swig/com/oigesture
-    SOURCES oigesture.i)
+    SOURCES openiss.i)
 
 target_include_directories(oigesture PRIVATE ${swig_inc_dirs})
 
@@ -47,18 +48,18 @@ add_jar(
 add_dependencies(oigestureJNI oigesture)
 
 # Build a testing jar which invokes the jni lib to verify it
-# add_jar(
-#     LibTesterMain
-#     SOURCES main.java
-#     ENTRY_POINT main
-# )
-# add_dependencies(LibTesterMain oigestureJNI)
+add_jar(
+    LibTesterMain
+    SOURCES main.java
+    ENTRY_POINT main
+)
+add_dependencies(LibTesterMain oigestureJNI)
 
-# add_custom_command(
-#     TARGET LibTesterMain
-#     POST_BUILD
-#     COMMAND ${Java_JAVA_EXECUTABLE} -Djava.library.path=.:${CMAKE_BINARY_DIR} -jar LibTesterMain.jar "JNI jar call success"
-# )
+add_custom_command(
+    TARGET LibTesterMain
+    POST_BUILD
+    COMMAND ${Java_JAVA_EXECUTABLE} -Djava.library.path=.:${CMAKE_BINARY_DIR} -jar LibTesterMain.jar "JNI jar call success"
+)
 
-# install(FILES ${CMAKE_BINARY_DIR}/swig/oigestureJNI.jar DESTINATION bin)
-# install(TARGETS oigesture DESTINATION lib)
+install(FILES ${CMAKE_BINARY_DIR}/swig/oigestureJNI.jar DESTINATION bin)
+install(TARGETS oigesture DESTINATION lib)

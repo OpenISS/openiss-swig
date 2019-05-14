@@ -1,23 +1,23 @@
 //
-// Created by jashanjotsingh on 12/04/19.
+// Created by jash on 25/01/19.
 //
 
-#ifndef OIGESTURETYPE_H_
-#define OIGESTURETYPE_H_
+#ifndef RT_SKEL_ROS_GESTURE_OIGESTUREDICTIONARY_H
+#define RT_SKEL_ROS_GESTURE_OIGESTUREDICTIONARY_H
 
 namespace openiss
 {
-    enum OIGestureType
+    enum class OIGestureType
     {
-        // Default Initialized
+        /* Default Initialized */
         GESTURE_ALL,
 
-        // NiTE2 Gesture Types
+        /* NiTE2 Gesture Types */
         GESTURE_WAVE,
         GESTURE_CLICK,
         GESTURE_HAND_RAISE,
 
-        // Nuitrack Gesture Types
+        /* Nuitrack Gesture Types */
         GESTURE_SWIPE_LEFT,
         GESTURE_SWIPE_RIGHT,
         GESTURE_SWIPE_UP,
@@ -26,4 +26,5 @@ namespace openiss
         GESTURE_WAVING
     };
 }
-#endif //OIGESTURETYPE_H_
+
+#endif //RT_SKEL_ROS_GESTURE_OIGESTUREDICTIONARY_H
