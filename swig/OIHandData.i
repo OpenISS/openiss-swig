@@ -1,5 +1,4 @@
 %module oigesture
-%include "stdint.i"
 
 %{
 #include "OIHandData.hpp"	

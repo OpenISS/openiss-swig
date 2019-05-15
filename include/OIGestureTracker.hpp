@@ -1,9 +1,5 @@
-//
-// Created by jash on 25/01/19.
-//
-
-#ifndef RT_SKEL_ROS_GESTURE_OIGESTURETRACKER_H
-#define RT_SKEL_ROS_GESTURE_OIGESTURETRACKER_H
+#ifndef OIGESTURETRACKER_H_
+#define OIGESTURETRACKER_H_
 
 #include <vector>
 #include "OIStatus.hpp"
@@ -44,4 +40,4 @@ namespace openiss
     };
 }
 
-#endif //RT_SKEL_ROS_GESTURE_OIGESTURETRACKER_H
+#endif //OIGESTURETRACKER_H_

@@ -1,7 +1,3 @@
-//
-// Created by jash on 25/01/19.
-//
-
 #include "OINiTEGestureTracker.hpp"
 
 using namespace openiss;

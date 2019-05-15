@@ -1,7 +1,3 @@
-//
-// Created by jash on 15/04/19.
-//
-
 #include "OIGestureData.hpp"
 
 using namespace openiss;

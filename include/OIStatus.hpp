@@ -1,9 +1,5 @@
-//
-// Created by jash on 15/04/19.
-//
-
-#ifndef RT_SKEL_ROS_GESTURE_OISTATUS_HPP
-#define RT_SKEL_ROS_GESTURE_OISTATUS_HPP
+#ifndef OISTATUS_H_
+#define OISTATUS_H_
 
 namespace openiss
 {
@@ -33,4 +29,4 @@ namespace openiss
         OIStatusType m_status { OIStatusType::STATUS_DEFAULT };
     };
 }
-#endif //RT_SKEL_ROS_GESTURE_OISTATUS_HPP
+#endif //OISTATUS_H_

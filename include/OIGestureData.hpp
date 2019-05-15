@@ -1,9 +1,5 @@
-//
-// Created by jash on 15/04/19.
-//
-
-#ifndef RT_SKEL_ROS_GESTURE_OIGESTUREDATA_HPP
-#define RT_SKEL_ROS_GESTURE_OIGESTUREDATA_HPP
+#ifndef OIGESTUREDATA_H_
+#define OIGESTUREDATA_H_
 
 #include "OIGFrame.hpp"
 #include "OIState.hpp"
@@ -32,4 +28,4 @@ namespace openiss
         OIGestureState m_iGestureState;
     };
 }
-#endif //RT_SKEL_ROS_GESTURE_OIGESTUREDATA_HPP
+#endif //OIGESTUREDATA_H_

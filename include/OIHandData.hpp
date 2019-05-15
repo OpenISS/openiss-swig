@@ -1,9 +1,5 @@
-//
-// Created by jash on 25/01/19.
-//
-
-#ifndef RT_SKEL_ROS_GESTURE_OIHAND_H
-#define RT_SKEL_ROS_GESTURE_OIHAND_H
+#ifndef OIHANDDATA_H_
+#define OIHANDDATA_H_
 
 #include "OIGFrame.hpp"
 #include "OIState.hpp"
@@ -34,5 +30,4 @@ namespace openiss
         Point3f m_sHandPosition;
     };
 }
-
-#endif //RT_SKEL_ROS_GESTURE_OIHAND_H
+#endif //OIHANDDATA_H_

@@ -1,9 +1,5 @@
-//
-// Created by jash on 30/01/19.
-//
-
-#ifndef RT_SKEL_ROS_GESTURE_OISTATE_HPP
-#define RT_SKEL_ROS_GESTURE_OISTATE_HPP
+#ifndef OISTATE_H_
+#define OISTATE_H_
 
 namespace openiss
 {
@@ -24,4 +20,4 @@ namespace openiss
         HAND_IS_TOUCHING_FOV    ,
     };
 }
-#endif //RT_SKEL_ROS_GESTURE_OISTATE_HPP
+#endif //OISTATE_H_

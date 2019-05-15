@@ -1,7 +1,3 @@
-//
-// Created by jash on 18/01/19.
-//
-
 #include "OIHandData.hpp"
 
 using namespace openiss;

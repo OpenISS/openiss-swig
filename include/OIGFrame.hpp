@@ -1,9 +1,5 @@
-//
-// Created by jash on 29/03/19.
-//
-
-#ifndef RT_SKEL_ROS_GESTURE_OIGFRAME_H
-#define RT_SKEL_ROS_GESTURE_OIGFRAME_H
+#ifndef OIGFRAME_H_
+#define OIGFRAME_H_
 
 #include <iostream>
 #include <cstring>
@@ -59,4 +55,4 @@ namespace openiss {
     typedef uint16_t                OIDepthPixel;
 }
 
-#endif //RT_SKEL_ROS_GESTURE_OIGFRAME_H
+#endif //OIGFRAME_H_

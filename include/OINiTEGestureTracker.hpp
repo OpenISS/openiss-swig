@@ -1,9 +1,5 @@
-//
-// Created by jash on 25/01/19.
-//
-
-#ifndef RT_SKEL_ROS_GESTURE_OINITEGESTURETRACKER_H
-#define RT_SKEL_ROS_GESTURE_OINITEGESTURETRACKER_H
+#ifndef OINITEGESTURETRACKER_H_
+#define OINITEGESTURETRACKER_H_
 
 #include <NiTE.h>
 #include <iostream>
@@ -71,4 +67,4 @@ namespace openiss
         std::vector<OIHandData> m_eHandData;
     };
 }
-#endif //RT_SKEL_ROS_GESTURE_OINITEGESTURETRACKER_H
+#endif //OINITEGESTURETRACKER_H_

@@ -1,9 +1,5 @@
-//
-// Created by jash on 25/01/19.
-//
-
-#ifndef RT_SKEL_ROS_GESTURE_OIGESTUREDICTIONARY_H
-#define RT_SKEL_ROS_GESTURE_OIGESTUREDICTIONARY_H
+#ifndef OIGESTURETYPE_H_
+#define OIGESTURETYPE_H_
 
 namespace openiss
 {
@@ -16,15 +12,7 @@ namespace openiss
         GESTURE_WAVE,
         GESTURE_CLICK,
         GESTURE_HAND_RAISE,
-
-        /* Nuitrack Gesture Types */
-        GESTURE_SWIPE_LEFT,
-        GESTURE_SWIPE_RIGHT,
-        GESTURE_SWIPE_UP,
-        GESTURE_SWIPE_DOWN,
-        GESTURE_PUSH,
-        GESTURE_WAVING
     };
 }
 
-#endif //RT_SKEL_ROS_GESTURE_OIGESTUREDICTIONARY_H
+#endif //OIGESTURETYPE_H_
