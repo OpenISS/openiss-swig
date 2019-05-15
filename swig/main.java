@@ -9,10 +9,31 @@ public class main
         OIGestureTracker tracker = new OINiTEGestureTracker();
         tracker.init();
         tracker.startGestureDetection();
+        GesturesVector gestures = new GesturesVector();
+        HandsVector hands = new HandsVector();
+
         while(true)
         {
-        	tracker.getGestures();
-            tracker.getHands();
+            gestures = tracker.getGestures();
+            hands = tracker.getHands();
+
+            for (OIGestureData o : gestures) {
+                System.out.println("gesture type : "+ o.getGestureType() );
+            }
+            for (OIHandData o : hands) {
+                System.out.println("hand id : "+ o.getHandID() );
+                System.out.println("hand position x: "+ o.getHandPosition().getX() );
+            }
+            
+            System.out.println("gestures size : "+ gestures.size() );
+            System.out.println("hands size : "+ hands.size());
+
+            GFrame frame = tracker.getDepthFrame();
+            SWIGTYPE_p_unsigned_short depth = frame.getDepthData();
+            
+            gestures.clear();
+            hands.clear();
+            System.out.println("*******************************************************");
         }
    }
 }

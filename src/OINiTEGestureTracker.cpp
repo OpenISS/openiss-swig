@@ -183,14 +183,14 @@ void OINiTEGestureTracker::FrameListener::onNewFrame(nite::HandTracker &p_HandTr
         m_OINiTEGestureTracker->m_eHand.setHandState(convertNiTEHandState(l_aHands[i]));
         m_OINiTEGestureTracker->m_eHand.setHandID(l_aHands[i].getId());
         m_OINiTEGestureTracker->m_eHandData.push_back(m_OINiTEGestureTracker->m_eHand);
-        if(l_aHands[i].isTracking())
+        /*if(l_aHands[i].isTracking())
         {
             std::cout << "Tracking Hand with id : " << l_aHands[i].getId() << std::endl;
             std::cout << "Hand Coordinates : "; 
             printPoint3f( l_aHands[i].getPosition().x,
                           l_aHands[i].getPosition().y,
                           l_aHands[i].getPosition().z );
-        }
+        }*/
     }
     m_GFrame.setHeight(m_OINiTEGestureTracker->m_DepthFrame.getVideoMode().getResolutionY());
     m_GFrame.setWidth(m_OINiTEGestureTracker->m_DepthFrame.getVideoMode().getResolutionX());
@@ -248,8 +248,10 @@ OIGestureState convertNiTEGestureState(nite::GestureData p_sGestureData)
 OIHandState convertNiTEHandState(nite::HandData p_sHandData)
 {
     if (p_sHandData.isLost()) {
+        std::cout << "Lost Hand with id : " << p_sHandData.getId() << std::endl;
         return OIHandState::HAND_IS_LOST;
     } else if (p_sHandData.isNew()) {
+        std::cout << "New Hand with id : " << p_sHandData.getId() << std::endl;
         return OIHandState::HAND_IS_NEW;
     } else if (p_sHandData.isTracking()) {
         return OIHandState::HAND_IS_TRACKING;
