@@ -47,18 +47,18 @@ add_jar(
 add_dependencies(oigestureJNI oigesture)
 
 # Build a testing jar which invokes the jni lib to verify it
-# add_jar(
-#     LibTesterMain
-#     SOURCES main.java
-#     ENTRY_POINT main
-# )
-# add_dependencies(LibTesterMain oigestureJNI)
+add_jar(
+    LibTesterMain
+    SOURCES main.java
+    ENTRY_POINT main
+)
+add_dependencies(LibTesterMain oigestureJNI)
 
-# add_custom_command(
-#     TARGET LibTesterMain
-#     POST_BUILD
-#     COMMAND ${Java_JAVA_EXECUTABLE} -Djava.library.path=.:${CMAKE_BINARY_DIR} -jar LibTesterMain.jar "JNI jar call success"
-# )
+add_custom_command(
+    TARGET LibTesterMain
+    POST_BUILD
+    COMMAND ${Java_JAVA_EXECUTABLE} -Djava.library.path=.:${CMAKE_BINARY_DIR} -jar LibTesterMain.jar "JNI jar call success"
+)
 
 # install(FILES ${CMAKE_BINARY_DIR}/swig/oigestureJNI.jar DESTINATION bin)
 # install(TARGETS oigesture DESTINATION lib)

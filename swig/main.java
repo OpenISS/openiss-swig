@@ -29,7 +29,7 @@ public class main
             System.out.println("hands size : "+ hands.size());
 
             GFrame frame = tracker.getDepthFrame();
-            SWIGTYPE_p_unsigned_short depth = frame.getDepthData();
+            short [] pixel_ = frame.getDepthData();
             
             gestures.clear();
             hands.clear();

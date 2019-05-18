@@ -1,4 +1,5 @@
 %module oigesture
+%include "java.swg"
 
 /* Order matters here. */
 
