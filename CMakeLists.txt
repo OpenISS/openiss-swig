@@ -25,9 +25,10 @@ target_include_directories(oigesturecxx PUBLIC $ENV{OPENNI2_INCLUDE})
 if(APPLE)
 	target_link_libraries(oigesturecxx $ENV{OPENNI2_REDIST}/libOpenNI2.dylib)
 	target_link_libraries(oigesturecxx $ENV{NITE2_REDIST64}/libNiTE2.dylib)
+elseif(UNIX)
+	target_link_libraries(oigesturecxx $ENV{OPENNI2_REDIST}/libOpenNI2.so)
+	target_link_libraries(oigesturecxx $ENV{NITE2_REDIST64}/libNiTE2.so)
 endif(APPLE)
-target_link_libraries(oigesturecxx $ENV{OPENNI2_REDIST}/libOpenNI2.so)
-target_link_libraries(oigesturecxx $ENV{NITE2_REDIST64}/libNiTE2.so)
 
 target_compile_options(oigesturecxx PRIVATE -Wall)
 

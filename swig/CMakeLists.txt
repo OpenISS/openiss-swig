@@ -37,9 +37,10 @@ target_link_libraries(oigesture PUBLIC oigesturecxx)
 if(APPLE)
     target_link_libraries(oigesture PRIVATE $ENV{OPENNI2_REDIST}/libOpenNI2.dylib)
     target_link_libraries(oigesture PRIVATE $ENV{NITE2_REDIST64}/libNiTE2.dylib)
+elseif(UNIX)
+    target_link_libraries(oigesture PRIVATE $ENV{OPENNI2_REDIST}/libOpenNI2.so)
+    target_link_libraries(oigesture PRIVATE $ENV{NITE2_REDIST64}/libNiTE2.so)
 endif(APPLE)
-target_link_libraries(oigesture PRIVATE $ENV{OPENNI2_REDIST}/libOpenNI2.so)
-target_link_libraries(oigesture PRIVATE $ENV{NITE2_REDIST64}/libNiTE2.so)
 
 target_compile_options(oigesture PRIVATE -Wall)
 
