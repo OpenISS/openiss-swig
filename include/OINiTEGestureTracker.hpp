@@ -40,7 +40,7 @@ namespace openiss
             {
                 this->m_OINiTEGestureTracker = p_OINiTEGestureTracker;
             }
-            ~FrameListener()
+            virtual ~FrameListener()
             {
                 delete m_OINiTEGestureTracker;
             }

@@ -31,7 +31,8 @@ public class main
             GFrame frame = tracker.getDepthFrame();
             short [] pixel_ = frame.getDepthData();
 
-            System.out.println("pixel_: "+pixel_[0]);
+            if(pixel_ != null)
+                System.out.println("pixel_: "+pixel_[0]);
             
             gestures.clear();
             hands.clear();

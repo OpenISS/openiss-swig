@@ -228,6 +228,7 @@ OIGestureType convertNiTEGestureType(nite::GestureType p_eGestureType)
             return OIGestureType::GESTURE_HAND_RAISE;
         default:
             std::cerr << "INVALID GESTURE TYPE" << std::endl;
+            return OIGestureType::GESTURE_ALL;
     }
 }
 /**/
