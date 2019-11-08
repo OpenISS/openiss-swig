@@ -1,5 +1,5 @@
 // App to test the jni lib can be successfully called
-import com.oigesture.*;
+import openiss.oigesture.*;
 
 public class main
 {

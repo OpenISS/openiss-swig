@@ -21,12 +21,12 @@ set_source_files_properties(oigesture.i
         CPLUSPLUS ON
         INCLUDE_DIRECTORIES "${swig_inc_dirs}")
 
-set(CMAKE_SWIG_FLAGS -package com.oigesture)
+set(CMAKE_SWIG_FLAGS -package openiss.oigesture)
 
 swig_add_library(oigesture
     TYPE SHARED
     LANGUAGE java
-    OUTPUT_DIR ${CMAKE_BINARY_DIR}/swig/com/oigesture
+    OUTPUT_DIR ${CMAKE_BINARY_DIR}/swig/openiss/oigesture
     SOURCES oigesture.i)
 
 target_include_directories(oigesture PRIVATE ${swig_inc_dirs})
@@ -47,8 +47,8 @@ target_compile_options(oigesture PRIVATE -Wall)
 add_jar(
     oigestureJNI
     SOURCES
-    ${CMAKE_BINARY_DIR}/swig/com/oigesture/oigestureJNI.java
-    ${CMAKE_BINARY_DIR}/swig/com/oigesture/oigesture.java
+    ${CMAKE_BINARY_DIR}/swig/openiss/oigesture/oigestureJNI.java
+    ${CMAKE_BINARY_DIR}/swig/openiss/oigesture/oigesture.java
 )
 add_dependencies(oigestureJNI oigesture)
 
