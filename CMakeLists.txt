@@ -31,7 +31,6 @@ elseif(UNIX)
 endif(APPLE)
 
 target_compile_options(oigesturecxx PRIVATE -Wall)
-
 target_compile_features(oigesturecxx PUBLIC cxx_std_17)
 set_property(TARGET oigesturecxx PROPERTY CXX_EXTENSIONS OFF)
 

@@ -12,17 +12,38 @@ public class main
         GesturesVector gestures = new GesturesVector();
         HandsVector hands = new HandsVector();
 
-        while(true)
+        boolean isRunning = true;
+
+        while(isRunning)
         {
             gestures = tracker.getGestures();
             hands = tracker.getHands();
+            float[] x = new float[1];
+            float[] y = new float[1];
 
             for (OIGestureData o : gestures) {
                 System.out.println("gesture type : "+ o.getGestureType() );
+                if(o.getGestureType() == OIGestureType.GESTURE_WAVE)
+                    isRunning = false;
             }
             for (OIHandData o : hands) {
                 System.out.println("hand id : "+ o.getHandID() );
-                System.out.println("hand position x: "+ o.getHandPosition().getX() );
+                System.out.println("hand position (x: "+ o.getHandPosition().getX()
+                                                 +"y: "+ o.getHandPosition().getY()
+                                                 +"z: "+ o.getHandPosition().getZ()+")");
+                tracker.convertHandCoordinatesToDepth(o.getHandPosition().getX(),
+                                                      o.getHandPosition().getY(),
+                                                      o.getHandPosition().getZ(),
+                                                      x,
+                                                      y);
+                System.out.println("hand position (x: "+ x[0]
+                                                 +"y: "+ y[0]
+                                                 +"z: "+ o.getHandPosition().getZ()+")");
+                if(o.getHandPosition().getX() < 0)
+                    System.out.println("right hand");
+                else {
+                    System.out.println("left hand");
+                }
             }
             
             System.out.println("gestures size : "+ gestures.size() );
@@ -33,10 +54,13 @@ public class main
 
             if(pixel_ != null)
                 System.out.println("pixel_: "+pixel_[0]);
-            
+            else         
+                System.out.println("Empty frame!");
+
             gestures.clear();
             hands.clear();
-            System.out.println("*******************************************************");
         }
+        tracker.stopGestureDetection();
+        tracker.stop();
    }
 }

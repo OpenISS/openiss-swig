@@ -5,7 +5,7 @@ using namespace openiss;
 /**/
 OIHandData::OIHandData() : m_iHandId {0},
                            m_iHandState{OIHandState::HAND_IS_ABSENT},
-                           m_sHandPosition{} {}
+                           m_sHandPosition{0,0,0} {}
 /**/
 OIHandData::~OIHandData() =  default;
 /**/

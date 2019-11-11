@@ -12,8 +12,8 @@ namespace openiss
         OIHandData();
         ~OIHandData();
         /**/
-        const int &getHandID();
-        const Point3f &getHandPosition();
+        const int& getHandID();
+        const Point3f& getHandPosition();
         /**/
         bool isHandLost() const;
         bool isHandNew() const;
