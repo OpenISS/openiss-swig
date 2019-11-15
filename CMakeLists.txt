@@ -3,13 +3,16 @@ project(oigesture VERSION 0.1.0)
 
 option(OIGESTURE_SWIG_JNI "Build a swig generated JNI library" OFF)
 
-if(APPLE)
-    SET(CMAKE_SKIP_RPATH NO)
-    SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
-    SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE)
-    SET(CMAKE_SHARED_LINKER_FLAGS "-fPIC")
+SET(CMAKE_SKIP_RPATH NO)
+SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE)
+
+IF(APPLE)
     SET(CMAKE_INSTALL_RPATH "/$ORIGIN/./osx")
-endif(APPLE)
+ELSE()
+    SET(CMAKE_INSTALL_RPATH "$ORIGIN/./"
+                            "$ORIGIN/linux64")
+ENDIF(APPLE)
 
 add_library(oigesturecxx
 		SHARED
@@ -25,10 +28,12 @@ target_include_directories(oigesturecxx PUBLIC $ENV{OPENNI2_INCLUDE})
 if(APPLE)
 	target_link_libraries(oigesturecxx $ENV{OPENNI2_REDIST}/libOpenNI2.dylib)
 	target_link_libraries(oigesturecxx $ENV{NITE2_REDIST64}/libNiTE2.dylib)
-elseif(UNIX)
+elseif(NOT APPLE)
 	target_link_libraries(oigesturecxx $ENV{OPENNI2_REDIST}/libOpenNI2.so)
 	target_link_libraries(oigesturecxx $ENV{NITE2_REDIST64}/libNiTE2.so)
 endif(APPLE)
+
+SET(CMAKE_SHARED_LINKER_FLAGS "-fPIC")
 
 target_compile_options(oigesturecxx PRIVATE -Wall)
 target_compile_features(oigesturecxx PUBLIC cxx_std_17)

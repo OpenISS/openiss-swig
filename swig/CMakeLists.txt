@@ -4,13 +4,16 @@ find_package(JNI REQUIRED)
 include(UseJava)
 include(UseSWIG)
 
-if(APPLE)
-    SET(CMAKE_SKIP_RPATH NO)
-    SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
-    SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE)
-    SET(CMAKE_SHARED_LINKER_FLAGS "-fPIC")
+SET(CMAKE_SKIP_RPATH NO)
+SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH FALSE)
+
+IF(APPLE)
     SET(CMAKE_INSTALL_RPATH "/$ORIGIN/./osx")
-endif(APPLE)
+ELSE()
+    SET(CMAKE_INSTALL_RPATH "$ORIGIN/./"
+                            "$ORIGIN/linux64")
+ENDIF(APPLE)
 
 list(APPEND swig_inc_dirs
         ${JNI_INCLUDE_DIRS}
@@ -37,11 +40,12 @@ target_link_libraries(oigesture PUBLIC oigesturecxx)
 if(APPLE)
     target_link_libraries(oigesture PRIVATE $ENV{OPENNI2_REDIST}/libOpenNI2.dylib)
     target_link_libraries(oigesture PRIVATE $ENV{NITE2_REDIST64}/libNiTE2.dylib)
-elseif(UNIX)
+elseif(NOT APPLE)
     target_link_libraries(oigesture PRIVATE $ENV{OPENNI2_REDIST}/libOpenNI2.so)
     target_link_libraries(oigesture PRIVATE $ENV{NITE2_REDIST64}/libNiTE2.so)
 endif(APPLE)
 
+SET(CMAKE_SHARED_LINKER_FLAGS "-fPIC")
 target_compile_options(oigesture PRIVATE -Wall)
 
 add_jar(
