@@ -1,5 +1,9 @@
 %module oigesture
 %include "typemaps.i"
+%include "std_vector.i"
+
+%template(GesturesVector) std::vector<openiss::OIGestureData>;
+%template(HandsVector) std::vector<openiss::OIHandData>;
 
 %apply float *OUTPUT { float *p_OutX };
 %apply float *OUTPUT { float *p_OutY };

@@ -3,7 +3,7 @@
 
 #include <vector>
 #include "OIStatus.hpp"
-#include "OIGFrame.hpp"
+#include "OIDepthFrame.hpp"
 #include "OIGestureData.hpp"
 #include "OIHandData.hpp"
 
@@ -36,7 +36,7 @@ namespace openiss
         virtual void convertDepthCoordinatesToHand(int p_x, int p_y, int p_z, float* p_OutX, float* p_OutY) = 0;
 
 //      TODO: Needs to be refactored up in the hierarchy.
-        virtual GFrame* getDepthFrame() = 0;
+        virtual OIDepthFrame* getDepthFrame() = 0;
     };
 }
 

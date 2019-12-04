@@ -110,9 +110,9 @@ std::vector<OIHandData> OINiTEGestureTracker::getHands()
 }
 
 /* Return most recent frame. */
-GFrame* OINiTEGestureTracker::getDepthFrame()
+OIDepthFrame* OINiTEGestureTracker::getDepthFrame()
 {
-    return &m_listener->m_GFrame;
+    return &m_listener->m_DepthFrame;
 }
 
 /* Real coordinates to Projective Coordinates*/
@@ -188,9 +188,9 @@ void OINiTEGestureTracker::FrameListener::onNewFrame(nite::HandTracker &p_HandTr
                           l_aHands[i].getPosition().z );
         }*/
     }
-    m_GFrame.setHeight(m_OINiTEGestureTracker->m_DepthFrame.getVideoMode().getResolutionY());
-    m_GFrame.setWidth(m_OINiTEGestureTracker->m_DepthFrame.getVideoMode().getResolutionX());
-    m_GFrame.setDepthData(static_cast<const u_int16_t*>(m_OINiTEGestureTracker->m_DepthFrame.getData()));
+    m_DepthFrame.setHeight(m_OINiTEGestureTracker->m_DepthFrame.getVideoMode().getResolutionY());
+    m_DepthFrame.setWidth(m_OINiTEGestureTracker->m_DepthFrame.getVideoMode().getResolutionX());
+    m_DepthFrame.setDepthData(static_cast<const u_int16_t*>(m_OINiTEGestureTracker->m_DepthFrame.getData()));
 }
 
 /**********************************************************************************************************************/

@@ -1,7 +1,7 @@
 #ifndef OIGESTUREDATA_H_
 #define OIGESTUREDATA_H_
 
-#include "OIGFrame.hpp"
+#include "OIDepthFrame.hpp"
 #include "OIState.hpp"
 #include "OIGestureType.hpp"
 

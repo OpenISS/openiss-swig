@@ -18,12 +18,14 @@ add_library(oigesturecxx
 		SHARED
         src/OIGestureData.cpp
         src/OIHandData.cpp
-        src/OINiTEGestureTracker.cpp
+        # src/OINiTEGestureTracker.cpp
+        src/OINuitrackGestureTracker.cpp
         )
 
 target_include_directories(oigesturecxx PUBLIC include)
 target_include_directories(oigesturecxx PUBLIC $ENV{NITE2_INCLUDE})
 target_include_directories(oigesturecxx PUBLIC $ENV{OPENNI2_INCLUDE})
+target_include_directories(oigesturecxx PUBLIC $ENV{NUITRACK_INCLUDE})
 
 if(APPLE)
 	target_link_libraries(oigesturecxx $ENV{OPENNI2_REDIST}/libOpenNI2.dylib)
@@ -31,6 +33,8 @@ if(APPLE)
 elseif(NOT APPLE)
 	target_link_libraries(oigesturecxx $ENV{OPENNI2_REDIST}/libOpenNI2.so)
 	target_link_libraries(oigesturecxx $ENV{NITE2_REDIST64}/libNiTE2.so)
+    target_link_libraries(oigesturecxx $ENV{NUITRACK_REDIST}/libnuitrack.so)
+    target_link_libraries(oigesturecxx $ENV{NUITRACK_REDIST}/libmiddleware.so)
 endif(APPLE)
 
 SET(CMAKE_SHARED_LINKER_FLAGS "-fPIC")

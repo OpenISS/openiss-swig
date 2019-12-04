@@ -26,7 +26,7 @@ namespace openiss
         std::vector<OIGestureData> getGestures() override;
         std::vector<OIHandData> getHands() override;
         /**/
-        GFrame* getDepthFrame() override;
+        OIDepthFrame* getDepthFrame() override;
         /**/
         void convertHandCoordinatesToDepth(float p_x, float p_y, float p_z, float* p_OutX, float* p_OutY) override;
         void convertDepthCoordinatesToHand(int p_x, int p_y, int p_z, float* p_OutX, float* p_OutY) override;
@@ -44,7 +44,7 @@ namespace openiss
             {
                 delete m_OINiTEGestureTracker;
             }
-            GFrame m_GFrame;
+            OIDepthFrame m_DepthFrame;
             void onNewFrame(nite::HandTracker &p_HandTracker) override;
 
         private:

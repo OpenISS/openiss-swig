@@ -1,7 +1,7 @@
 #ifndef OIHANDDATA_H_
 #define OIHANDDATA_H_
 
-#include "OIGFrame.hpp"
+#include "OIDepthFrame.hpp"
 #include "OIState.hpp"
 
 namespace openiss

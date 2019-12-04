@@ -6,7 +6,8 @@ public class main
     public static void main(String argv[])
     {
         System.loadLibrary("oigesture");
-        OIGestureTracker tracker = new OINiTEGestureTracker();
+        // OIGestureTracker tracker = new OINiTEGestureTracker();
+        OIGestureTracker tracker = new OINuitrackGestureTracker();
         tracker.init();
         tracker.startGestureDetection();
         GesturesVector gestures = new GesturesVector();
@@ -16,6 +17,7 @@ public class main
 
         while(isRunning)
         {
+            tracker.update();
             gestures = tracker.getGestures();
             hands = tracker.getHands();
             float[] x = new float[1];
@@ -49,7 +51,7 @@ public class main
             System.out.println("gestures size : "+ gestures.size() );
             System.out.println("hands size : "+ hands.size());
 
-            GFrame frame = tracker.getDepthFrame();
+            OIDepthFrame frame = tracker.getDepthFrame();
             short [] pixel_ = frame.getDepthData();
 
             if(pixel_ != null)

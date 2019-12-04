@@ -6,8 +6,8 @@
 void openiss::convertHandCoordinatesToDepth(float p_x, float p_y, float p_z, float* p_OutX, float* p_OutY) override;
 
 %{
-#include "OINiTEGestureTracker.hpp"	
+#include "OINuitrackGestureTracker.hpp"	
 using namespace openiss;
 %}
 
-%include "OINiTEGestureTracker.hpp"	
+%include "OINuitrackGestureTracker.hpp"	

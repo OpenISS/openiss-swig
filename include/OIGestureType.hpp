@@ -12,6 +12,14 @@ namespace openiss
         GESTURE_WAVE,
         GESTURE_CLICK,
         GESTURE_HAND_RAISE,
+
+        /* Nuitrack Gesture Types */
+        GESTURE_SWIPE_LEFT,
+        GESTURE_SWIPE_RIGHT,
+        GESTURE_SWIPE_UP,
+        GESTURE_SWIPE_DOWN,
+        GESTURE_PUSH,
+        GESTURE_WAVING
     };
 }
 

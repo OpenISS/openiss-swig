@@ -1,5 +1,5 @@
-#ifndef OIGFRAME_H_
-#define OIGFRAME_H_
+#ifndef OIDEPTHFRAME_H_
+#define OIDEPTHFRAME_H_
 
 #include <iostream>
 #include <cstring>
@@ -7,11 +7,11 @@
 
 namespace openiss {
 /**/
-    struct GFrame
+    struct OIDepthFrame
     {
     public:
-        GFrame() = default;
-        ~GFrame() = default;
+        OIDepthFrame() = default;
+        ~OIDepthFrame() = default;
         /**/
         void setHeight(const int& p_height)
         {
@@ -55,4 +55,4 @@ namespace openiss {
     typedef uint16_t                OIDepthPixel;
 }
 
-#endif //OIGFRAME_H_
+#endif //OIDEPTHFRAME_H_

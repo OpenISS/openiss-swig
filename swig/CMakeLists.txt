@@ -35,6 +35,7 @@ swig_add_library(oigesture
 target_include_directories(oigesture PRIVATE ${swig_inc_dirs})
 target_include_directories(oigesture PUBLIC $ENV{NITE2_INCLUDE})
 target_include_directories(oigesture PUBLIC $ENV{OPENNI2_INCLUDE})
+target_include_directories(oigesture PUBLIC $ENV{NUITRACK_INCLUDE})
 
 target_link_libraries(oigesture PUBLIC oigesturecxx)
 if(APPLE)
@@ -43,6 +44,8 @@ if(APPLE)
 elseif(NOT APPLE)
     target_link_libraries(oigesture PRIVATE $ENV{OPENNI2_REDIST}/libOpenNI2.so)
     target_link_libraries(oigesture PRIVATE $ENV{NITE2_REDIST64}/libNiTE2.so)
+    target_link_libraries(oigesture PRIVATE $ENV{NUITRACK_REDIST}/libnuitrack.so)
+    target_link_libraries(oigesture PRIVATE $ENV{NUITRACK_REDIST}/libmiddleware.so)
 endif(APPLE)
 
 SET(CMAKE_SHARED_LINKER_FLAGS "-fPIC")

@@ -1,9 +1,9 @@
 %module oigesture
 %include "stdint.i"
 
-%ignore openiss::GFrame::setWidth(const int& p_width);
-%ignore openiss::GFrame::setHeight(const int& p_height);
-%ignore openiss::GFrame::setDepthData(const uint16_t* p_depthData);
+%ignore openiss::OIDepthFrame::setWidth(const int& p_width);
+%ignore openiss::OIDepthFrame::setHeight(const int& p_height);
+%ignore openiss::OIDepthFrame::setDepthData(const uint16_t* p_depthData);
 
 %typemap(jni) unsigned short* "jshortArray"
 %typemap(jtype) unsigned short* "short[]"
@@ -38,8 +38,8 @@
 }
 
 %{
-#include "OIGFrame.hpp"	
+#include "OIDepthFrame.hpp"	
 using namespace openiss;
 %}
 
-%include "OIGFrame.hpp"
+%include "OIDepthFrame.hpp"
