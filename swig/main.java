@@ -6,8 +6,8 @@ public class main
     public static void main(String argv[])
     {
         System.loadLibrary("oigesture");
-        // OIGestureTracker tracker = new OINiTEGestureTracker();
-        OIGestureTracker tracker = new OINuitrackGestureTracker();
+        OIGestureTracker tracker = new OINiTEGestureTracker();
+        // OIGestureTracker tracker = new OINuitrackGestureTracker();
         tracker.init();
         tracker.startGestureDetection();
         GesturesVector gestures = new GesturesVector();

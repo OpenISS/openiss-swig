@@ -18,7 +18,7 @@ add_library(oigesturecxx
 		SHARED
         src/OIGestureData.cpp
         src/OIHandData.cpp
-        # src/OINiTEGestureTracker.cpp
+        src/OINiTEGestureTracker.cpp
         src/OINuitrackGestureTracker.cpp
         )
 
