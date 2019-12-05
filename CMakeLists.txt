@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.12.2)
 project(oigesture VERSION 0.1.0)
 
 option(OIGESTURE_SWIG_JNI "Build a swig generated JNI library" OFF)
+option(OIGESTURE_SWIG_TEST_JAR "Test generated JNI library with swig/main.java" OFF)
 
 SET(CMAKE_SKIP_RPATH NO)
 SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
