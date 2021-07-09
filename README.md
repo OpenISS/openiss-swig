@@ -1,4 +1,5 @@
 # OpenISS SWIG Wrapper
+[![DOI](https://zenodo.org/badge/181078419.svg)](https://zenodo.org/badge/latestdoi/181078419)
 
 This project is used to generate wrappers for common classes and data structures of the [OpenISS](https://github.com/OpenISS/OpenISS) project to support bindings for Java (and other languages) based of the OpenISS C++ framework. It is used as an example for a JNI library in [Processing](https://processing.org) for Java-based projects like ISSv2, known as OIGesture JNI Library in OpenISS's examples directory.
 
